@@ -7,6 +7,7 @@ anon = GitHub()
 followers = g.followers()
 # Follow all user followers
 for follower in followers:
-    print("following: " + str(follower))
-    print(g.follow(follower))
-    time.sleep(120)
+    if not g.is_following(follower):
+        print("following: " + str(follower))
+        print(g.follow(follower))
+        time.sleep(220)
