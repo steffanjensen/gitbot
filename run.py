@@ -11,3 +11,6 @@ for follower in followers:
         print("following: " + str(follower))
         print(g.follow(follower))
         time.sleep(220)
+    else:
+        print("Already following this user")
+        time.sleep(2)
