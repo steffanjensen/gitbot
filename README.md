@@ -1,4 +1,4 @@
-# github-followbot
+# Github Follow Bot
 Github follow and other action bot. This bot is good to automate your github account.
 
 ## How to run:
