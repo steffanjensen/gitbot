@@ -1,6 +1,6 @@
 # Github Follow Bot
 
-Free Github follow and other action bot. This bot is good for automating your github account.
+Free Github bot for automating your tasks on github. With this bot you can follow, unfollow, star followers repo and many more functions.
 
 ## How to run:
 pip install requirements.txt
