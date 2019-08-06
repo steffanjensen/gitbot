@@ -1,16 +1,6 @@
-from github3 import login, GitHub
-import time
-g = login('user', password='password')
+from gitbot import Bot
 
-
-anon = GitHub()
-followers = g.followers()
-# Follow all user followers
-for follower in followers:
-    if not g.is_following(follower):
-        print("following: " + str(follower))
-        print(g.follow(follower))
-        time.sleep(220)
-    else:
-        print("Already following this user")
-        time.sleep(2)
+# Example on how to run this bot
+bot = Bot.github("yourusername", "yourpassword", delay=30)
+bot.unfollow_non_followers()
+bot.follow_users_followers("reliefs")
