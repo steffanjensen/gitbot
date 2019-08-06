@@ -42,5 +42,24 @@ class github(object):
         else:
             pass
 
+    def star_followers_repo(self, username):
+        ''' Star followers repos '''
+        followers = self.g.followers_of(username)
+        for follower in followers:
+            repos = self.g.repositories_by(follower)
+            x = 0
+            for repo in repos:
+                if x < 2:
+                    print("Starring " + str(follower) + " " + str(repo))
+                    repo = str(repo)
+                    repo = repo.split("/")
+                    print(repo[1])
+                    print(self.g.star(follower, repo[1]))
+                    time.sleep(self.delay)
+                    x += 1
+                else:
+                    print("Liking next profile")
 
+            else:
+                pass
 
