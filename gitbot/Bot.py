@@ -32,6 +32,28 @@ class github(object):
             else:
                 print("Already following this user")
 
+    def follow_repo_contributes(self, username):
+        ''' Follow a users followers '''
+        repos = self.g.repositories_by(username)
+        x = 0
+        for repo in repos:
+            if x < 20:
+                repo = str(repo)
+                repo = repo.split("/")
+                print(repo[1])
+                followers = self.g.repository(repo[0], repo[1])
+                followers = (set(followers.contributors()))
+                print(followers)
+                for follower in followers:
+                    if not self.g.is_following(follower):
+                        print("following: " + str(follower))
+                        print(self.g.follow(follower))
+                        print("sleeping " + str(self.delay) + " seconds")
+                        time.sleep(self.delay)
+                    else:
+                        print("Already following this user")
+                        time.sleep(self.delay)
+
     def unfollow_non_followers(self):
         ''' unfollow all non mutal followers '''
         followings = self.g.following()
@@ -62,7 +84,7 @@ class github(object):
 
             else:
                 pass
-           
+
     def unstar_repos(self, username):
         starred = self.g.starred_by(username)
         for star in starred:
