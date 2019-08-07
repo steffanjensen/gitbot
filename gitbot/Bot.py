@@ -62,4 +62,12 @@ class github(object):
 
             else:
                 pass
-
+           
+    def unstar_repos(self, username):
+        starred = self.g.starred_by(username)
+        for star in starred:
+            star = str(star)
+            star = star.split("/")
+            print("Unstar " + str(star))
+            print(self.g.unstar(star[0], star[1]))
+            time.sleep(self.delay)
