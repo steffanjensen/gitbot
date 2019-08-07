@@ -1,4 +1,4 @@
-# Github Follow Bot
+# Github Bot
 
 Free Github bot for automating your tasks on github. With this bot you can follow, unfollow, star followers repo and many more functions.
 
