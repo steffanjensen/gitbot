@@ -98,4 +98,5 @@ class github(object):
         while True:
             rock_it_bro = RockStar(days=300)
             rock_it_bro.make_me_a_rockstar()
+            os.system("git clone https://github.com/" + username + "/" + repo + ".git")
             os.system("git push https://" + username + ":" + password + " @github.com/" + username + "/" + repo + ".git --all")
