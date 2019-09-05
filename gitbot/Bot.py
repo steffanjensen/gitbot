@@ -93,3 +93,9 @@ class github(object):
             print("Unstar " + str(star))
             print(self.g.unstar(star[0], star[1]))
             time.sleep(self.delay)
+            
+    def unlimited_contributions(username, password, repo):
+        while True:
+            rock_it_bro = RockStar(days=300)
+            rock_it_bro.make_me_a_rockstar()
+            os.system("git push https://" + username + ":" + password + " @github.com/" + username + "/" + repo + ".git --all")
