@@ -20,14 +20,15 @@ class github(object):
         self.g = login(username=username, password=password)
         self.anon = GitHub()
         print("Logged in ")
-        
+
     def unlimited_commits(self):
         ''' Make Unlimited commits'''
         with open("rockstar.py", "w+") as f:
             randoms = random.randint(100, 400)
             f.write(str(randoms))
         os.system("git add rockstar.py")
-        os.system("git commit -m 'fun'")
+        os.system("git commit -m 'fun' --date='20" + str(random.randint(15, 19)) + "/" + str(random.randint(1, 12)) + "/" + str(random.randint(1, 30)) + " +0" + str(random.randint(1, 200)) + "'")
+
 
     def follow_users_followers(self, username):
         ''' Follow a users followers '''
@@ -102,7 +103,7 @@ class github(object):
             print("Unstar " + str(star))
             print(self.g.unstar(star[0], star[1]))
             time.sleep(self.delay)
-            
+
     def unlimited_contributions(username, password, repo):
         while True:
             rock_it_bro = RockStar(days=300)
