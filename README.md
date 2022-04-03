@@ -14,5 +14,5 @@ python run.py
 * bot.star_followers_repo("reliefs")
 * bot.unfollow_non_followers()
 * bot.follow_users_followers("reliefs")
-* unstar_repos("reliefs)
+* unstar_repos("reliefs")
 * follow_repo_contributes("instabotai")
